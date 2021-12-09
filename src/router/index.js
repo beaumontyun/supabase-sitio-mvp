@@ -11,8 +11,24 @@ function loadPage(view) {
 const routes = [
   {
     path: '/',
-    name: 'Dashboard',
-    component: loadPage("Dashboard"),
+    name: 'Main',
+    component: loadPage("Main"),
+    meta: {
+      requiresAuth: true,
+    }
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: loadPage("Profile"),
+    meta: {
+      requiresAuth: true,
+    }
+  },
+  {
+    path: '/Editprofile',
+    name: 'EditProfile',
+    component: loadPage("EditProfile"),
     meta: {
       requiresAuth: true,
     }
@@ -27,6 +43,16 @@ const routes = [
     name: 'SignIn',
     component: loadPage("SignIn")
   },
+  {
+    path: '/privacy-policy',
+    name: 'PrivacyPolicy',
+    component: loadPage("PrivacyPolicy")
+  },
+  {
+    path: '/terms-of-service',
+    name: 'TermsOfService',
+    component: loadPage("TermsOfService")
+  }
 ]
 
 const router = createRouter({
